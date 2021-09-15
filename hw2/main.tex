@@ -1,0 +1,87 @@
+\documentclass[12pt,fleqn,leqno,letterpaper]{article}
+\usepackage{lmodern}
+\usepackage{relsize}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathrsfs}
+
+\title{Homework 2}
+\author{Alex Day\\
+	\small{Analysis of Linear Systems}
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+	\item[6a.] $\forall x \in X, 0 \cdot x = \bigodot$
+
+		\begin{proof}
+			Let $x \in X$. So,
+			\begin{align*}
+				0x &= 0x\\
+				   &= (0 + 0) x && \text{(addative identity)}\\
+				   &= 0x + 0x && \text{(distribution)}\\
+			0x + (-0x) &= 0x + 0x + (-0x)\\
+  \mathrel{\mathsmaller{\bigodot}} &= 0x + \mathrel{\mathsmaller{\bigodot}}  && \text{(addative inverse)}\\
+  \mathrel{\mathsmaller{\bigodot}} &= 0x  && \text{(addative identity)}
+			\end{align*}
+		\end{proof}
+
+	\item[6a.] $\forall x \in X, (-x) = (-1) \cdot x$
+
+		\begin{proof}
+			Let $x \in X$. So,
+			\begin{align*}
+				x + (-1) \cdot x &= x + (-1) \cdot x \\
+				                &= 1 \cdot x + (-1) \cdot x && \text{(addative identity)} \\
+						&= (1 - 1) \cdot x && \text{(distribution)} \\
+						&= 0 \cdot x && \text{(addative inverse)} \\
+						&= 0 && \text{(see 6a.)}\\
+				x + (-1) \cdot x &= 0 &&\\
+				    (-1) \cdot x &= -x &&\\
+			\end{align*}
+		\end{proof}
+
+	\item[7a.] $W_{1} \cap W_{2}\text{ is a subspace of }(V, \mathscr{F})$
+		\begin{enumerate}
+			\item $W_{1} \cap W_{2} \subset V$
+				This is true by the definition of intersection
+			\item $W_{2} \cap W_{2}$ is closed under vector addition
+				\begin{align*}
+					& \text{let } y_{1}, y_{2} \in W_{1} \cap W_{2} && \\
+					& y_{1}, y_{2} \in W_{1} \wedge y_{1}, y_{2} \in W_{2} && \text{(defition of intersection)}\\
+					& y_{1} + y_{2} \in W_{1} \wedge y_{1} + y_{2} \in W_{2} && \text{(defition of vector space)}\\
+					& \text{therefore } y_{1} + y_{2} \in W_{1} \cap W_{2} &&\\
+				\end{align*}
+
+			\item $W_{2} \cap W_{2}$ is closed under scalar multiplication
+				\begin{align*}
+					& \text{let } y_{1} \in W_{1} \cap W_{2}, \alpha \in \mathscr{F} && \\
+					& y_{1} \in W_{1} \wedge y_{1} \in W_{2} && \text{(defition of intersection)}\\
+					& \alpha y_{1} \in W_{1} \wedge \alpha y_{1} \in W_{2} && \text{(defition of vector space)}\\
+					& \text{therefore } \alpha y_{1} \in W_{1} \cap W_{2} &&\\
+				\end{align*}
+		\end{enumerate}
+
+	\item[7b.]
+		\begin{align*}
+			& \text{Let} && W_{1} = \{ x \in \mathbb{R} | c^{T} x = \mathrel{\mathsmaller{\bigodot}},
+		c^{T} = \begin{bmatrix} 1 & 1\end{bmatrix}\}\\
+			&            && W_{2}= \{ x \in \mathbb{R} | c^{T} x = \mathrel{\mathsmaller{\bigodot}},
+		c^{T} = \begin{bmatrix} 1 & -1\end{bmatrix}\}
+		\end{align*}
+
+		The set $W_{1} \cup W_{2}$ is not closed under vector addition:
+
+		\begin{align*}
+			w_{1} &= \begin{bmatrix} 1 \\ 1 \end{bmatrix} \in W_{1}\\
+			w_{2} &= \begin{bmatrix} 1 \\ -1 \end{bmatrix} \in W_{2}\\\\
+			w_{3} &= w_{1} + w_{2} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}\\\\
+			w_{3} &\notin W_{1} \wedge w_{3} \notin W_{2}\\
+			w_{3} &\notin W_{1} \cap W_{2}
+		\end{align*}
+\end{itemize}
+
+\end{document}

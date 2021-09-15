@@ -1,0 +1,54 @@
+\documentclass[12pt,fleqn,leqno,letterpaper]{article}
+\usepackage{lmodern}
+\usepackage{relsize}
+\usepackage[textwidth=7in,textheight=11in]{geometry}% http://ctan.org/pkg/geometry
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathrsfs}
+
+\title{Homework 3}
+\author{Alex Day\\
+	\small{Analysis of Linear Systems}
+}
+\date{\today}
+
+\newtheorem{theorem}{Theorem}
+
+\newenvironment{subproof}[1][\proofname]{%
+  \renewcommand{\qedsymbol}{$\blacksquare$}%
+  \begin{proof}[#1]%
+}{%
+  \end{proof}%
+}
+
+\begin{document}
+	\maketitle
+	\begin{theorem}
+		Let $\mathcal{A} \colon X \to Y$ be a linear transformation between vector spaces $X$ and $Y$ over the field $\mathcal{F}$. $\mathcal{A}$ is one-to-one if and only if $\mathcal{N}(\mathcal{A}) = \{\bigodot_{X}\}$.
+	\end{theorem}
+	\begin{proof}
+		\item
+		\begin{enumerate}
+			\item
+			\begin{subproof}[Subproof] $\mathcal{A}\text{ is 1:1} \implies \mathcal{N}(\mathcal{A}) = \{\bigodot_{X}\}$\\\\
+				Assume $\mathcal{A}$ one-to-one. Let $x \in \mathcal{N}(\mathcal{A})$
+				\begin{align*}
+					\mathcal{A}(\bigodot_{X}) = \bigodot_{Y} & && \text{(definition of null space)}\\
+					x = \bigodot_{X} & && \text{(by definition of 1:1)}
+				\end{align*}
+			\end{subproof}
+			\item
+				\begin{subproof}[Subproof] $\mathcal{N}(\mathcal{A}) = \{\bigodot_{X}\} \implies \mathcal{A}\text{ is 1:1}$\\\\
+				Assume $\mathcal{N}(\mathcal{A}) = \{\bigodot_{X}\}$.
+				Let $x_{1}, x_{2} \in X$ such that $\mathcal{A}(x_{1}) = \mathcal{A}(x_{2})$
+				\begin{align*}
+					\mathcal{A}(x_{1}) - \mathcal{A}(x_{2}) &= \bigodot_{Y}\\
+					\mathcal{A}(x_{1}) + (-1) \mathcal{A}(x_{2}) &= \bigodot_{Y}\\
+					\mathcal{A}(x_{1} + (-1) x_{2}) &= \bigodot_{Y} && \text{(by lineararity)}\\
+					\mathcal{A}(x_{1} - x_{2}) &= \bigodot_{Y}\\
+					x_{1} - x_{2} &= \bigodot_{X} && \text{(by definition of null space)}\\
+					x_{1} &= x_{2}
+				\end{align*}
+			\end{subproof}
+		\end{enumerate}
+	\end{proof}
+\end{document}

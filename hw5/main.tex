@@ -1,0 +1,72 @@
+\documentclass[12pt,fleqn,leqno,letterpaper]{article}
+\usepackage{lmodern}
+\usepackage{relsize}
+\usepackage[textwidth=7in,textheight=11in]{geometry}% http://ctan.org/pkg/geometry
+\usepackage{amsmath, amsthm, amssymb, mathtools}
+\usepackage{mathrsfs}
+
+\title{Homework 5}
+\author{Alex Day\\
+	\small{Analysis of Linear Systems}
+}
+\date{\today}
+
+\newtheorem{theorem}{Theorem}
+
+\newenvironment{subproof}[1][\proofname]{%
+  \renewcommand{\qedsymbol}{$\blacksquare$}%
+  \begin{proof}[#1]%
+}{%
+  \end{proof}%
+}
+
+\begin{document}
+	\maketitle
+
+	\begin{enumerate}
+		\item[1c.] A matrix $M$ is symmetric if and only if $M = M^{T}$. This implies that the matrix takes the form
+			$\begin{bmatrix}
+				a_{11} & a_{12} \\
+				a_{21} & a_{22}
+			\end{bmatrix}$
+			where $a_{12} = a_{21}$. The basis for matricies of this form is:
+			\begin{center}
+				\boxed{
+					U = \left\{ \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}, \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}, \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \right\}
+				}
+			\end{center}
+
+
+		\item[1d.]
+			\begin{align*}
+				\mathcal{L}_{M}(Q) &= \begin{bmatrix} 2 & -2 \\ 6 & 5 \end{bmatrix}^{T}Q + Q \begin{bmatrix} 2 & -2 \\ 6 & 5 \end{bmatrix}\\\\
+				\mathcal{L}_{M}\left(\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}\right) &= \begin{bmatrix} 2 & -2 \\ 6 & 5 \end{bmatrix}^{T} \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 2 & -2 \\ 6 & 5 \end{bmatrix}\\
+				&= \begin{bmatrix} 4 & -2 \\ -2 & 0 \end{bmatrix} = 4 u_{1} + 0 u_{2} + (-2) u_{3}\\
+				&= \begin{bmatrix} 4 & 0 & -2 \end{bmatrix}_{U}\\\\
+				\mathcal{L}_{M}\left(\begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}\right) &= \begin{bmatrix} 2 & -2 \\ 6 & 5 \end{bmatrix}^{T} \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} + \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 2 & -2 \\ 6 & 5 \end{bmatrix}\\
+				&= \begin{bmatrix} 0 & 6 \\ 6 & 10 \end{bmatrix} = 0 u_{1} + 10 u_{2} + 6 u_{3}\\
+				&= \begin{bmatrix} 0 & 10 & 6 \end{bmatrix}_{U}\\\\
+				\mathcal{L}_{M}\left(\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}\right) &= \begin{bmatrix} 2 & -2 \\ 6 & 5 \end{bmatrix}^{} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 2 & -2 \\ 6 & 5 \end{bmatrix}\\
+				&= \begin{bmatrix} 12 & 7 \\ 7 & -4 \end{bmatrix} = 12 u_{1} + (-4) u_{2} + 7 u_{3}\\
+				&= \begin{bmatrix} 12 & -4 & 7 \end{bmatrix}_{U}\\\\
+				L_{M} &= \begin{bmatrix}
+				4 & 0 & -2\\
+				0 & 10 & 6\\
+				12 & -4 & 7
+				\end{bmatrix}
+			\end{align*}
+
+		\newpage
+
+		\item[1f.]
+			\begin{align*}
+				\mathcal{L}_{M}(Q) &= \begin{bmatrix} -10 & 0 \\ 0 & -20 \end{bmatrix}\\
+				&= L_{m} Q\\
+				&= \begin{bmatrix}
+				4 & 0 & -2\\
+				0 & 10 & 6\\
+				12 & -4 & 7
+				\end{bmatrix} Q \\
+			\end{align*}
+	\end{enumerate}
+\end{document}
