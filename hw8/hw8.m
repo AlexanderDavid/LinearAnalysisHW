@@ -12,6 +12,7 @@ Y = [y_1.'*x ; y_2.'*x ; y_3.'*x];
 X = linsolve(G, Y);
 m_0 = X(1) * y_1 + X(2) * y_2 + X(3) * y_3;
 disp("3a. Best Approximation of x");
+disp(X)
 disp(m_0);
 
 %% 4a
@@ -30,6 +31,11 @@ Y = [inner(y_1, x) inner(y_2, x)].';
 X = linsolve(G, Y);
 
 x_a = y_1 * X(1) + y_2 * X(2);
+
+disp(double(X(1)))
+disp(double(X(2)))
+
+disp(x_a)
 
 %% 4b
 
@@ -51,7 +57,8 @@ y_3 = t^5;
 
 v_1 = y_1 / norm(y_1);
 
-m_02 = inner(v_1, y_2) * v_1;
+m_02 = 
+
 v_2 = y_2 - m_02;
 v_2 = v_2 / norm(v_2);
 
@@ -65,5 +72,5 @@ function [out] = inner(x1, x2)
 end
 
 function [out] = funcNorm(x)
-    out = sqrt(int(abs(x)^2, [0 pi/2]));
+    out = sqrt(int(x^2, [0 pi/2]));
 end
