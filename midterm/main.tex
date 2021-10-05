@@ -1,0 +1,54 @@
+\documentclass[12pt,fleqn,leqno,letterpaper]{article}
+\usepackage{lmodern}
+\usepackage{relsize}
+\usepackage[textwidth=7in,textheight=11in]{geometry}% http://ctan.org/pkg/geometry
+\usepackage{amsmath, amsthm, amssymb, mathtools}
+\usepackage{mathrsfs}
+
+\usepackage{graphicx}
+\usepackage{adjustbox}
+
+
+\title{Midterm}
+\author{Alex Day\\
+	\small{Analysis of Linear Systems}
+}
+\date{\today}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\begin{document}
+\maketitle
+	\begin{enumerate}
+		\item[1a.]
+			\begin{align*}
+			  \text{rref}(A) &= \begin{bmatrix}
+								1  &  0  &  4\\
+								0  &  1  &  6\\
+								0  &  0  &  0\\
+								0  &  0  &  0\\
+								0  &  0  &  0\\
+								\end{bmatrix}&&\text{calculated in matlab}\\
+			  x_{1} + 4x_{3} = \bigodot_{\mathbb{R}^{5}} &\implies -4x_{3} = x_{1}\\
+			  x_{2} + 6x_{3} = \bigodot_{\mathbb{R}^{5}} &\implies -6x_{3} = x_{2}\\
+			  \mathcal{N}(A) &= \text{span}\left(\left\{
+							    \begin{bmatrix} -4 \\ -6 \\ 1 \end{bmatrix}
+								\right\}\right)\\
+			  \mathcal{R}(A^{T}) &= \text{span}\left(\left\{
+							    \begin{bmatrix} 1 \\ 0 \\ 0  \end{bmatrix},
+							    \begin{bmatrix} 0 \\ 1 \\ 0  \end{bmatrix}
+								\right\}\right)
+			\end{align*}
+	  \item[1b.]
+			\begin{align*}
+			  U &= \left\{
+					\begin{bmatrix} 1 \\ 0 \\ 0  \end{bmatrix},
+					\begin{bmatrix} 0 \\ 1 \\ 0  \end{bmatrix}
+					\begin{bmatrix} -4 \\ -6 \\ 1 \end{bmatrix}
+					\right\}\\
+			  P_{1} &=
+					\begin{bmatrix} 1 & 0 & -4 \\ 0 & 1 & -6 \\ 0 & 0 & 1 \end{bmatrix}^{-1}
+			\end{align*}
+
+	\end{enumerate}
+\end{document}
